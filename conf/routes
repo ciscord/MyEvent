@@ -1,0 +1,44 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.login
+POST     /login/submit                           controllers.HomeController.loginSubmit
+POST     /register/submit                           controllers.HomeController.registerSubmit
+GET     /dashboard                           controllers.HomeController.index
+GET     /dashboard/logout                           controllers.HomeController.logout
+GET     /dashboard/participant                          controllers.HomeController.participant
+GET     /dashboard/participant/delete/:email                          controllers.HomeController.deleteParticipant(email: String)
+
+POST    /dashboard/participant/editSubmit                          controllers.ParticipantController.submitEditParticipant
+
+# USER CONTROLLER ACTIONS
+GET     /dashboard/users                          controllers.UsersController.index
+GET     /dashboard/users/delete/:email            controllers.UsersController.deleteUser(email: String)
+POST    /dashboard/users/editSubmit               controllers.UsersController.submitEditUser
+POST    /dashboard/users/addSubmit               controllers.UsersController.submitAddUser
+
+# FOOD ITEM CONTROLLER ACTIONS
+GET     /dashboard/fooditems                          controllers.FoodItemsController.index
+GET     /dashboard/fooditems/delete/:id            controllers.FoodItemsController.deleteFoodItem(id: String)
+POST    /dashboard/fooditems/editSubmit               controllers.FoodItemsController.submitEditFoodItem
+POST    /dashboard/fooditems/addSubmit               controllers.FoodItemsController.submitAddFoodItem
+
+# EVENT CONTROLLER ACTIONS
+GET     /dashboard/events                          controllers.EventsController.index
+GET     /dashboard/events/delete/:id            controllers.EventsController.deleteEvent(id: String)
+POST    /dashboard/events/editSubmit               controllers.EventsController.submitEditEvent
+POST    /dashboard/events/addSubmit               controllers.EventsController.submitAddEvent
+
+GET     /register                           controllers.HomeController.register
+GET     /forgotpassword                           controllers.HomeController.forgotpassword
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file           controllers.Assets.at(path="/public", file)
