@@ -4,8 +4,7 @@ This is a java web application for managing events.
 
 ## Running
 
-Run this using [sbt](http://www.scala-sbt.org/).  If you downloaded this project from https://github.com/ivicamarinkovic/MyEvent then you'll find a prepackaged version of sbt in the project directory:
-
+Run this using [sbt](http://www.scala-sbt.org/).
 ```
 sbt run
 ```
